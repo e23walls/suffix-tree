@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C75837C1C8A7AB600C2941C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C75837B1C8A7AB600C2941C /* main.cpp */; };
+		9C75837C1C8A7AB600C2941C /* suffix-tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C75837B1C8A7AB600C2941C /* suffix-tree.cpp */; };
+		9C7583851C8A7D6F00C2941C /* CSV-parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C7583831C8A7D6F00C2941C /* CSV-parser.cpp */; };
+		9C7583881C8A8D8700C2941C /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C7583861C8A8D8700C2941C /* Tree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,11 @@
 
 /* Begin PBXFileReference section */
 		9C7583781C8A7AB600C2941C /* suffix-tree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "suffix-tree"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C75837B1C8A7AB600C2941C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9C75837B1C8A7AB600C2941C /* suffix-tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "suffix-tree.cpp"; sourceTree = "<group>"; };
+		9C7583831C8A7D6F00C2941C /* CSV-parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CSV-parser.cpp"; sourceTree = "<group>"; };
+		9C7583841C8A7D6F00C2941C /* CSV-parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CSV-parser.h"; sourceTree = "<group>"; };
+		9C7583861C8A8D8700C2941C /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		9C7583871C8A8D8700C2941C /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,11 @@
 		9C75837A1C8A7AB600C2941C /* suffix-tree */ = {
 			isa = PBXGroup;
 			children = (
-				9C75837B1C8A7AB600C2941C /* main.cpp */,
+				9C75837B1C8A7AB600C2941C /* suffix-tree.cpp */,
+				9C7583871C8A8D8700C2941C /* Tree.h */,
+				9C7583861C8A8D8700C2941C /* Tree.cpp */,
+				9C7583841C8A7D6F00C2941C /* CSV-parser.h */,
+				9C7583831C8A7D6F00C2941C /* CSV-parser.cpp */,
 			);
 			path = "suffix-tree";
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C75837C1C8A7AB600C2941C /* main.cpp in Sources */,
+				9C7583881C8A8D8700C2941C /* Tree.cpp in Sources */,
+				9C75837C1C8A7AB600C2941C /* suffix-tree.cpp in Sources */,
+				9C7583851C8A7D6F00C2941C /* CSV-parser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
