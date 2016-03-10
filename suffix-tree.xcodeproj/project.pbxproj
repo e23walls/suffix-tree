@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1E880C1C921968008DC6D5 /* Token.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E880A1C921968008DC6D5 /* Token.cpp */; };
 		9C75837C1C8A7AB600C2941C /* suffix-tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C75837B1C8A7AB600C2941C /* suffix-tree.cpp */; };
 		9C7583851C8A7D6F00C2941C /* CSV-parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C7583831C8A7D6F00C2941C /* CSV-parser.cpp */; };
 		9C7583881C8A8D8700C2941C /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C7583861C8A8D8700C2941C /* Tree.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9C1E880A1C921968008DC6D5 /* Token.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Token.cpp; sourceTree = "<group>"; };
+		9C1E880B1C921968008DC6D5 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		9C7583781C8A7AB600C2941C /* suffix-tree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "suffix-tree"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C75837B1C8A7AB600C2941C /* suffix-tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "suffix-tree.cpp"; sourceTree = "<group>"; };
 		9C7583831C8A7D6F00C2941C /* CSV-parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CSV-parser.cpp"; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				9C75837B1C8A7AB600C2941C /* suffix-tree.cpp */,
 				9C7583871C8A8D8700C2941C /* Tree.h */,
 				9C7583861C8A8D8700C2941C /* Tree.cpp */,
+				9C1E880B1C921968008DC6D5 /* Token.h */,
+				9C1E880A1C921968008DC6D5 /* Token.cpp */,
 				9C7583841C8A7D6F00C2941C /* CSV-parser.h */,
 				9C7583831C8A7D6F00C2941C /* CSV-parser.cpp */,
 			);
@@ -131,6 +136,7 @@
 				9C7583881C8A8D8700C2941C /* Tree.cpp in Sources */,
 				9C75837C1C8A7AB600C2941C /* suffix-tree.cpp in Sources */,
 				9C7583851C8A7D6F00C2941C /* CSV-parser.cpp in Sources */,
+				9C1E880C1C921968008DC6D5 /* Token.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +255,7 @@
 				9C7583811C8A7AB600C2941C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
