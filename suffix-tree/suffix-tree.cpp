@@ -40,11 +40,9 @@ void parse_csv(string csv_file_name) {
 
 int main(int argc, const char * argv[]) {
     // Assume file is in command-line arg
-    string csv_file_name = "";
     if (argc >= 2) {
         // Get file name from argv[1]
-        csv_file_name = argv[1];
-        parse_csv(csv_file_name);
+        parse_csv(argv[1]);
     }
 
     return 0;
