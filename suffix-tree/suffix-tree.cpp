@@ -41,7 +41,6 @@ void parse_csv(string csv_file_name) {
 int main(int argc, const char * argv[]) {
     // Assume file is in command-line arg
     string csv_file_name = "";
-    bool has_row_names = 0;
     if (argc >= 2) {
         // Get file name from argv[1]
         csv_file_name = argv[1];
