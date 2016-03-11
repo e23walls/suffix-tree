@@ -7,8 +7,8 @@
 // @param str - input string stream of file
 //
 // @returns - A vector of the tokens in the CSV file line, without commas or newlines
-std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream & str) {
-    std::vector<std::string> result;
+std::deque<std::string> getNextLineAndSplitIntoTokens(std::istream & str) {
+    std::deque<std::string> result;
     std::string line;
     // TODO - specify the delimiter as a parameter to the method, not as an argument to std::getline.
     std::getline(str, line, CR);

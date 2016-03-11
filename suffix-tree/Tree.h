@@ -3,11 +3,17 @@
 
 #include <stdio.h>
 #include <string>
-#include <vector>
+#include <deque>
 #include "Token.h"
+#include <vector>
 
 typedef enum {
-    TIME = 0, CLASS, EVENT, PID, PNAME, NodeTypeSize
+    TIME  = 0,
+    CLASS = 1,
+    EVENT = 2,
+    PID   = 3,
+    PNAME = 4,
+    NodeTypeSize
 } NodeType;
 
 class TreeNode {
@@ -16,7 +22,7 @@ public:
     TreeNode(std::string s);
     ~TreeNode();
 
-    void insert(std::vector<std::string> s);
+    void insert(std::deque<std::string> s);
     void print();
 
 private:
@@ -24,7 +30,7 @@ private:
 //    std::vector<std::string> data;
     std::string data;
     std::vector<TreeNode *> children;
-    void insert(std::vector<std::string> s, int left, int right); // Insert between indices
+    void insert(std::deque<std::string> s, int left, int right); // Insert between indices
 };
 
 #endif /* Tree_hpp */

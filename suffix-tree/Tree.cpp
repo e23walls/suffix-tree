@@ -14,7 +14,7 @@ TreeNode::~TreeNode() {
     this->children.clear();
 }
 
-void TreeNode::insert(std::vector<std::string> s) {
+void TreeNode::insert(std::deque<std::string> s) {
     // Insert all suffixes:
     if (s.size()) {
         for (int i = (int)(s.size() - 1); i >= 0; i--) {
@@ -23,9 +23,9 @@ void TreeNode::insert(std::vector<std::string> s) {
     }
 }
 
-void TreeNode::insert(std::vector<std::string> s, int first, int last) {
+void TreeNode::insert(std::deque<std::string> s, int first, int last) {
     // If already in the tree, ignore it, and don't insert again.
-    if (first == last) {
+    if (first >= last) {
         return;
     }
     std::string curr = s[first];
@@ -33,13 +33,13 @@ void TreeNode::insert(std::vector<std::string> s, int first, int last) {
         if ((*ci)->data == curr) {
             // Insert into this child
             (*ci)->insert(s, first+1, last);
-            (*ci)->type = (NodeType)first;
             return;
         }
     }
     // Else, we didn't find it in the children; insert as a child here
     TreeNode * newChild = new TreeNode();
     newChild->data = s[first];
+    newChild->type = (NodeType)first;
     this->children.push_back(newChild);
     newChild->insert(s, first+1, last);
 }

@@ -15,7 +15,7 @@ void parse_csv(string csv_file_name) {
         ifstream csv_file;
         csv_file.open (csv_file_name);
         for (int i = 0; i < 20; i++) {
-            vector<string> line_tokens = getNextLineAndSplitIntoTokens(csv_file);
+            deque<string> line_tokens = getNextLineAndSplitIntoTokens(csv_file);
             if (i == 0) {
                 if (line_tokens.size() && line_tokens[0] == "") {
                     has_row_names = 1;
@@ -24,6 +24,9 @@ void parse_csv(string csv_file_name) {
                 // which is just labels for the columns.
             } else {
                 // Insert the line tokens here.
+                if (has_row_names) {
+                    line_tokens.pop_front();
+                }
                 treeRoot->insert(line_tokens);
             }
         }
