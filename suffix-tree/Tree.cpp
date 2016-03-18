@@ -3,7 +3,7 @@
 
 TreeNode::TreeNode() {}
 
-TreeNode::TreeNode(std::string s) {
+TreeNode::TreeNode(size_t s) {
     this->data = s;
 }
 
@@ -14,7 +14,7 @@ TreeNode::~TreeNode() {
     this->children.clear();
 }
 
-void TreeNode::insert(std::deque<std::string> s) {
+void TreeNode::insert(std::deque<size_t> s) {
     // Insert all suffixes:
     if (s.size()) {
         for (int i = (int)(s.size() - 1); i >= 0; i--) {
@@ -23,12 +23,12 @@ void TreeNode::insert(std::deque<std::string> s) {
     }
 }
 
-void TreeNode::insert(std::deque<std::string> s, int first, int last) {
+void TreeNode::insert(std::deque<size_t> s, int first, int last) {
     // If already in the tree, ignore it, and don't insert again.
     if (first >= last) {
         return;
     }
-    std::string curr = s[first];
+    size_t curr = s[first];
     for (std::vector<TreeNode *>::const_iterator ci = this->children.begin(); ci != this->children.end(); ci++) {
         if ((*ci)->data == curr) {
             // Insert into this child

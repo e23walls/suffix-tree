@@ -19,18 +19,18 @@ typedef enum {
 class TreeNode {
 public:
     TreeNode();
-    TreeNode(std::string s);
+    TreeNode(size_t);
     ~TreeNode();
 
-    void insert(std::deque<std::string> s);
+    void insert(std::deque<size_t> s);
     void print(int indent);
 
 private:
 //    NodeType type;
 //    std::vector<std::string> data;
-    std::string data;
+    size_t data;
     std::vector<TreeNode *> children;
-    void insert(std::deque<std::string> s, int left, int right); // Insert between indices
+    void insert(std::deque<size_t> s, int left, int right); // Insert between indices
 };
 
 #endif /* Tree_hpp */

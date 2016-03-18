@@ -8,7 +8,8 @@
 // @param str - input string stream of file
 //
 // @returns - A vector of the tokens in the CSV file line, without commas or newlines
-void getNextLineAndSplitIntoTokens(std::istream & str, std::deque<std::string> & result, bool & has_row_numbers, bool include = true) {
+void getNextLineAndSplitIntoTokens(std::istream & str, std::map<std::string, size_t> & eventsToInts,
+                                   std::deque<size_t> & result, bool & has_row_numbers, bool include = true) {
     std::string line;
     // TODO - specify the delimiter as a parameter to the method, not as an argument to std::getline.
     std::getline(str, line, CR);
@@ -20,7 +21,10 @@ void getNextLineAndSplitIntoTokens(std::istream & str, std::deque<std::string> &
     while(std::getline(lineStream, cell, ',')) {
         // Only include the events
         if (include && (NodeType)counter == NodeType::EVENT + (has_row_numbers ? 1 : 0)) {
-            result.push_back(cell);
+            if (eventsToInts.find(cell) == eventsToInts.end()) {
+                eventsToInts[cell] = eventsToInts.size();
+            }
+            result.push_back(eventsToInts[cell]);
         } else if (!include) {
             if (counter == 0 && cell == "") {
                 has_row_numbers = true;
