@@ -8,6 +8,6 @@
 #define LF '\n'
 #define EOL "\r\n"
 
-std::deque<std::string> getNextLineAndSplitIntoTokens(std::istream& str);
+void getNextLineAndSplitIntoTokens(std::istream& str, std::deque<std::string> & result, bool & has_row_numbers, bool include);
 
 #endif /* CSV_parser_h */

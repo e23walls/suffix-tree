@@ -23,10 +23,10 @@ public:
     ~TreeNode();
 
     void insert(std::deque<std::string> s);
-    void print();
+    void print(int indent);
 
 private:
-    NodeType type;
+//    NodeType type;
 //    std::vector<std::string> data;
     std::string data;
     std::vector<TreeNode *> children;

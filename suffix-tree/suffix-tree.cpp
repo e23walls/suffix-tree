@@ -3,34 +3,29 @@
 #include "csv-parser.h"
 #include "Token.h"
 
+#define MYDEBUG
+
 using namespace std;
 
+// Want to split up into 100 tokens each
 void parse_csv(string csv_file_name) {
     TreeNode * treeRoot = new TreeNode();
+    deque<string> line_tokens;
 
-    bool has_row_names = 0;
+    bool has_row_names = false;
     cout << "file name: '" << csv_file_name << "'\n";
 
     if (csv_file_name.length()) {
         ifstream csv_file;
         csv_file.open (csv_file_name);
         for (int i = 0; i < 20; i++) {
-            deque<string> line_tokens = getNextLineAndSplitIntoTokens(csv_file);
-            if (i == 0) {
-                if (line_tokens.size() && line_tokens[0] == "") {
-                    has_row_names = 1;
-                }
-                // Don't insert the line tokens in this case because this is the first line,
-                // which is just labels for the columns.
-            } else {
-                // Insert the line tokens here.
-                if (has_row_names) {
-                    line_tokens.pop_front();
-                }
-                treeRoot->insert(line_tokens);
-            }
+            getNextLineAndSplitIntoTokens(csv_file, line_tokens, has_row_names, i != 0);
         }
-        treeRoot->print();
+        cout << "Number of tokens: " << line_tokens.size() << endl;
+        treeRoot->insert(line_tokens);
+#ifdef MYDEBUG
+        treeRoot->print(0);
+#endif
 
         csv_file.close();
     } else {

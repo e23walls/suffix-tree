@@ -1,4 +1,5 @@
 #include "CSV-parser.h"
+#include "Tree.h"
 #include <iostream>
 
 
@@ -7,8 +8,7 @@
 // @param str - input string stream of file
 //
 // @returns - A vector of the tokens in the CSV file line, without commas or newlines
-std::deque<std::string> getNextLineAndSplitIntoTokens(std::istream & str) {
-    std::deque<std::string> result;
+void getNextLineAndSplitIntoTokens(std::istream & str, std::deque<std::string> & result, bool & has_row_numbers, bool include = true) {
     std::string line;
     // TODO - specify the delimiter as a parameter to the method, not as an argument to std::getline.
     std::getline(str, line, CR);
@@ -16,12 +16,20 @@ std::deque<std::string> getNextLineAndSplitIntoTokens(std::istream & str) {
     std::stringstream lineStream(line);
     std::string cell;
 
+    int counter = 0;
     while(std::getline(lineStream, cell, ',')) {
-        result.push_back(cell);
-        std::cout << "'" << cell << "' ";
+        // Only include the events
+        if (include && (NodeType)counter == NodeType::EVENT + (has_row_numbers ? 1 : 0)) {
+            result.push_back(cell);
+        } else if (!include) {
+            if (counter == 0 && cell == "") {
+                has_row_numbers = true;
+            }
+        }
+        std::cout << "'" << cell << "' \n";
+        counter++;
     }
     std::cout << std::endl;
-    return result;
 }
 
 
